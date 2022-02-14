@@ -1,0 +1,146 @@
+:root {
+  --height: ;
+}
+
+/*
+    Flebox -> o caja flexbile.
+
+    Propiedades que tienen los flex-container "Padre de los flex-items"
+    - otra propiedad en flebox es: 
+        - inline-flex:
+            - hace que el contendor tenda propiedades en linea haciendo que pierda un posicionamiento
+            con margin: 0 auto; haciendo que sea un elemento en linea asi teniendo el comportamiento
+            del mismo osea en linea.
+
+        atributos:
+        - flex-direction: define la direccion del flujo de flebox. Por defecto esta en fila.
+        - flex-wrap: definede el comportamiendo de los flex-items "Hijos del contenedor"
+             cuando su tamaño sumado revasa el tamaño del main-axis.
+            Propiedades de flex-warp.
+            - nowrap (por defecto): si los elementos "flex-item" revasan el tamaño del contenedor estos mismos
+                se encojeran para que se adapte el tamaño del contenedor.
+            - wrap: si sobrepasan el tamaño del contendor los flex-items que sobren pasaran a la
+                siguiente fila. Con esto puedo hacer muchos trucos ejemplo "Galeria de imagenes".
+            - wrap-reverse: hace lo mismo que "wrap" solo que hay una diferencia solo que se mandaran al final del
+                cross-axis eje transversal del main-axis -> se define con flex-direction.
+        
+        (abreviatura de flex-direction y flex-wrap)
+        - flex-flow:
+            sintaxis: 
+            flex-flow : direction wrap;
+
+        Alineamiento main-axis eje principal
+        - justify-content: 
+            Nos permite alinear en el main-axis (Eje principal). hace reparto delos items en el espacio del container.
+            esto si hay espacio que distribuir.
+            su valor por defecto es:
+                - flex-start (valor por defecto): Alinea lis items al inicio del main-axis.
+                - flex-end: Alinea los items al final de main-axis.
+                - center: Centra los elementos.
+                - space-between: Distribuir los espacios equitativamente en el main-axis, pero el  primer
+                    elemento y el ultimo se pegaran ala linea inicial y final de su contenedor.
+                - space-around: Ditribuira el espacio equitativamente en el main-axis pero no pegara los elementos
+                    a las esquinas.
+                - space-evenly: Distribuir los espacios equitativamente en el main-axis, solo que aqui no se suman
+                    los espacios entre items si no que los espacios son realmente equitativos entre los items.
+        
+        Alineamiento del eje secundario "cross-axis". (si hay espacio disponible.)
+        - align-items: Alinea items en el eje secundario osea "cross-axis".
+            - stretch (valor por defecto):   Estira los items si estos no tienen width o height definidos.
+            - center: Permite centrar los elementos en el cross-axis.
+            - flex-start:  Alinea lis items al inicio del cross-axis.
+            - flex-end:  Alinea lis items al final del cross-axis.
+            - baseline: Los items se van a alinear en su linea base. Linea Base seria el "Contenido que contiene 
+                los items o el item.
+            
+             "Uso cuando este la pripiedad flex-wrap:wrap;"·
+        - align-content : Sirve para cuando los elementos se desborden (flex-wrap:warp) y queremos hacer que el espeacio que sobra
+            entre ellas no exista o simplemente queremos que esten juntas. Solo cuando los elementos se desborden. Para el Cross-axis.
+            mismos valores que tiene justify-content.
+
+    - Ordenaniento de los items en flexbox "Solo para items-hijos"
+        - Order: (posicion por default es 0) Permite ordenar los items segun sea el gusto.
+        - flex-grow (valor por defecto 0): Nos sive para hacer que los flex-items ocupen todo el espacio disponible. 
+            Es afecta el factor de crecimiento en cuestion a otros flex-items. Este Afecta en el main-axis.
+            - Cuando el valor es de 1 este divide el espacio sobrante equitativamente.
+        -flex-shrink: (Afecta en el main-axis, valor por defecto 1) 
+            Contraparte de flex-grow, este afecta el espacio faltante,
+            define cuanto se encoje los flex-items esto para distribuir el espacio faltante cuando se desbordan los items.
+            Esta propiedad no acepta valores negativos, cuando el valor es 0 el item que tiene esta propiedad,
+            recupera su tamaño original, y si tiene 1 estos se encojen para proporcionar el espacio faltante de su contenedor.
+        - flex-basis: indica el tamaño oficial del elemento antes de que sufra un incremente o decremento en su tamaño
+            usando flex-grow o flex-shrink .
+                Sus valores serian los siguientes.
+                - auto: "Valor por defecto", con esto indicamos que sus valores de tamaño seran especificados con heigth y width.
+
+        - align-self : Afecta a un elemento en espacifico osea un flex-item en especial este que sea seleccionado.
+            Afecta el cross-axis "eje secundario", tiene los mismos valores de align-items.
+
+
+    -- avebriatura de flex-grow, flex-shrink, flex-basis
+    - flex: <grow> <shrink> <flex-basis>;
+
+
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+  width: 90%;
+  max-width: 600px;
+  height: 600px;
+  outline: 2px solid #000;
+  margin: 30px auto;
+
+  /*Flex-container propiedades que contiene el contenedor de los flex-items*/
+  display: flex;
+  /*align-items: flex-start; */
+  /* flex-direction: row;
+  flex-wrap: wrap-reverse; */
+  /* flex-flow: row wrap;  (abreviatura de flex-direction y flex-wrap) */
+  flex-direction: row;
+
+  /*Alineamiento main-axis*/
+  /* justify-content: center; */
+
+  /*Eje secundario*/
+  /* align-items: baseline; */
+  /* align-content: center; Solo cuando se habilite flex-wrap: wrap; o cuando lso items se desborden*/
+}
+
+.item {
+  --height: 90px;
+  background: tomato;
+  /* width: 90px; */
+  height: var(--height);
+  line-height: var(--height);
+  color: #fff;
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.5rem;
+  font-family: sans-serif;
+  flex-basis: 60px;
+}
+
+.item1 {
+  /* order: 1; Elejimos el orden de que puede ir los elementos en el container*/
+  /* flex-shrink: 0; Sirve para ver cuando se encoje un item y para que este mismo se le proporcione el espacio faltante del contenedor*/
+  /* align-self: center; Afecta a un item en especifico mismas funciones que el align-items*/
+  margin-top: auto;
+}
+
+.item2 {
+  background: darkslateblue;
+}
+
+.item3 {
+  background: crimson;
+}
+
+.item4 {
+  background: steelblue;
+}

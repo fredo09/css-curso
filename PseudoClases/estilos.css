@@ -1,0 +1,174 @@
+:root {
+  background: steelblue;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*
+    Una PseudoClase en css escuando un elemto html transita por algun estado
+    por ejemplo cuando se le pasa encima el mause sobre algun boton o enlace.
+
+    Estos pueden servir como un plus o tambien como selectores con el fin de dar mayor
+    especificidad a la hora de apuntar algun estilo a etiqueta html.
+*/
+
+/*
+    psudoClases para enlaces a o etiquetas a
+
+    Sintaxis: 
+
+    <selector>: <pseudoclase>{
+        <regla css>
+    }
+    
+    Entre los pseudoclases estan los siguientes:
+        - link: Sirve para links o enlaces que aun no han sido visitados.
+        - visited: Sirve para los links o enlaces que ya fueron visitados.
+        - hover: Sirve para cuando el mause esta sobre algun elemento.
+        - active: Sirve cuando le das click sobre algun elemento.
+        - target (objetivo): Sirve cuando un elemento ha sido tarjeteado y que esta como url de la pagina.
+    -- Para formularios
+        - focus: Sirve para seleccionar elementos cuando el focus esta activo en algun elemento.
+        - cheked: Sirve para cuando los elementos han sido checkeados.
+        - focos-whitin: Sirve para contenedores que tengan el focos en los formularios. este debe de tener a un hijo en el estado focus.
+        - not: Sirve para hacer un filtro en un elemento.
+
+
+
+
+    
+        
+        */
+
+.enlace {
+  background: chocolate;
+  height: 200px;
+  width: 100%;
+  color: wheat;
+  display: block;
+  margin-bottom: 10px;
+  padding: 40px 0;
+}
+
+.enlace:link {
+  color: white;
+  background: #000;
+}
+
+.enlace:visited {
+  color: red;
+  background: yellow;
+}
+
+.enlace:hover {
+  padding: 40px 20px;
+  transition: 0.3s;
+}
+
+.enlace:active {
+  background: steelblue;
+  color: white;
+}
+
+/*Target*/
+
+.event {
+  display: inline-block;
+  margin-top: 30px;
+  margin-left: 30px;
+  background: crimson;
+  color: #fff;
+  text-decoration: none;
+  padding: 20px;
+}
+
+.event:target {
+  padding: 20px;
+}
+
+#objetivo {
+  width: 100px;
+  height: 100px;
+  margin-top: 30px;
+  margin-left: 30px;
+  background: steelblue;
+  transition: 0.3s;
+}
+
+#objetivo:target {
+  margin-left: 510px;
+}
+
+/*
+    Pseudoclases de forms
+*/
+
+.form {
+  width: 40%;
+  margin: 30px auto;
+  padding: 35px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.5);
+  background: #f2f2f2;
+}
+
+/*Focus-with in*/
+
+.form:focus-within {
+  background: darkcyan;
+}
+
+.form__title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+input {
+  display: block;
+}
+
+input[type="text"],
+input[type="email"] {
+  width: 100%;
+  padding: 12px 5px;
+  margin-bottom: 12px;
+  border: none;
+  outline: none;
+}
+
+input[type="checkbox"] {
+  display: inline-block;
+}
+
+input:focus {
+  background: coral;
+  color: #fff;
+}
+
+input[type="checkbox"]:checked + label {
+  background: coral;
+  color: #fff;
+}
+
+h3 {
+  font-size: 2rem;
+  font-weight: normal;
+  text-align: center;
+  font-family: "Arial";
+  margin-bottom: 30px;
+}
+
+/*
+    entendiendo el pseudoclase not "filtro"
+    /*Encadenando not */
+
+h3:not(.title):not(:hover) {
+  color: crimson;
+}
+
+h3:not(:hover) {
+  text-decoration: line-through;
+}

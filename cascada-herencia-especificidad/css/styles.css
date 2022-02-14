@@ -1,0 +1,68 @@
+/*
+    Herencia Cascada y especificidad en CSS3
+*/
+/*
+    rango de especificidad
+    1000 - inline css "el uso de este rango es mala practica"
+    100  - selectores con id
+    10   - selectores con clase y tributos
+    1    - selectores de elemento ejm header -> <header></header>
+*/
+/*
+    la rega de cascada se da cuando los selectores tienen mismo nivel 
+    de especificidad: 
+
+    h2 {
+        color :white;
+    }
+
+    h2{
+        color:black
+    }
+
+    aqui aplica la cascada ya que el h2 tiene la misma importancia de
+    especificidad con valor 1 "selectores de elemento" y el selector de
+    abajo sobreescribe el de arriba.
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.header {
+  height: 400px;
+  background: brown;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  border: 2px solid #000;
+  padding: 20px;
+  text-align: center;
+}
+
+/*
+    aplicando especificidad
+*/
+/*
+.title {
+  color: olive;
+}
+
+h2 {
+  color: black;
+}*/
+
+/*
+    HERENCIA
+*/
+
+.title {
+  font-size: 20px;
+  /*Heredamos la propiedad del padre con esta sentencia
+    pripedades de las que no se pueden heredar
+  */
+  border: inherit;
+  padding: inherit;
+  /*text-align: initial;*/ /*quetamos la herencia y vuelve al valor inicial*/
+}

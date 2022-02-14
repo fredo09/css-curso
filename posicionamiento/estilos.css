@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 300vh;
+}
+
+/*
+    Posicionamiento CSS.
+
+    Para entender como funciona el posicionamiento en css se debe de entender como funciona
+    el flujo del html ya que este siempre empieza de attiba hacia abajo en la parte superior
+    izquierda. Existen 5 tipos de posicionamiento de las cuales se hablaran a continuacion.
+
+    - Static: No es necesario devlararlo ya que todo los elementos tienen por defecto en los elementos.
+            Este no se podra modificar el flujo del elemento.
+    - Relative: Al principio no modifica el flujo y el posicionamiento pero para mover el elemento posicionado Relativamente.
+            Se desbloquean los siguientes propiedades: top, right, left, bottom. Aun moviendo el elemento, 
+            este respetara su lugar en el flujo.
+            Se llama posicionamiento relative por que se mueve dependiendo de su pocision original.
+    - Absolute: Se posiciona en base a su ancestro previamente posicionado en este caso seria el body.
+            Pierde su espacio en el flujo.
+    - Fixed: Este tambien pierde su posicionamiento en el flujo, como absolute solo que este
+            se queda en donde nosotros le podamos asiganar practicamente en el viewport o pantalla del navegador.
+            
+
+    Nota: 
+        - z-index: afecta el apilamiento de los elemetos y define el desplazamiento en el eje z.
+        Esto sirve para sobre poner elementos encima de otros. Ejemplo:
+
+            z-index: <valor porsitico o negativo>;
+        Por defecto el z-index de un elemento es auto. Entre mas alto el valor de z-index este se
+        sobrepondra a los elementos de menor valor. (recomendado poner valores de 10 en 10 "20, 30, 40").
+        Esta propiedad funcionara a los elementos que esten posicionados. "Relative, Fixed, Abolute".
+
+          
+*/
+
+.container {
+  width: 450px;
+  height: 530px;
+  margin: 20px auto;
+  border: 5px solid crimson;
+  position: relative;
+}
+
+.box {
+  background: steelblue;
+  width: 100px;
+  height: 100px;
+  margin-top: 20px;
+  margin-left: 20px;
+  text-align: center;
+  color: #fff;
+  font-weight: bold;
+  line-height: 100px;
+}
+
+/* Posicionamiento Static */
+
+.static {
+  position: static;
+}
+
+/* Posicionamiento Relative */
+
+.relative {
+  background: crimson;
+  position: relative;
+  /* top: 100px;
+  left: 200px;
+  right: ;
+  bottom: ;
+} */
+}
+
+/* Posicionamiento Absoluto */
+
+.absolute {
+  position: absolute;
+  background: purple;
+  top: 0;
+  margin: 0;
+  right: 0;
+}
+
+/* Posicionamiento Fixed */
+
+.fixed {
+  position: fixed;
+  background: tomato;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.fixed a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.fixed a:hover {
+  text-decoration: underline;
+  cursor: pointer;
+}

@@ -1,0 +1,87 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*
+  Unidades de medida.
+
+    - Unidades de medida absolutas
+
+      -px: Estas unidades de medida siempre seran fijos no importa en
+          pantalla se visualiza la web estas medidas son absolutas.
+    
+    - Unidades de medida relativas
+
+      -rem: Unidad de medida relativa esta depende del selector root "*"
+            en este caso depende del font-size: 16px; asi que el 
+            valor que tomara 1rem seria 16px;
+
+            - 1rem = 16px;
+      -em: 
+      Unidades de medida que es relativo al tamaño de fuente de su padre.
+            - tamaño de fuente del padre = 1em si font-size: 20px = 1em y esto info seria 20px. 
+
+
+*/
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f2f2f2;
+}
+
+.opinion {
+  padding: 2em;
+  width: 70%;
+  margin: 40px auto;
+  box-shadow: 8px 8px 16px rgba(0, 0, 0, 0.5);
+}
+
+.title {
+  font-size: 30px;
+}
+
+.text {
+  font-size: 20px;
+}
+
+/*Limites medidas y porsentajes*/
+
+/*
+  Max-width:
+    Define el tamaño maximo del ancho de un elemento.
+      Ejemplo :  max-width: 500px;
+  
+  Max-height:
+    Define el tamaño maximo del alto de un elemento.
+      Ejemplo :  max-height: 500px;
+
+  min-width:
+    Define el tamaño minimo del ancho de un elemento.
+      Ejemplo: min-width: 200px;
+  
+  min-height:
+    Define el tamaño minimo del ancho de un elemento.
+      Ejemplo: min-height: 200px;
+
+*/
+
+/*
+  Unidades de medida del Viewport
+  -vh: alto de la pantalla del viewport
+  -vw: ancho de la pantalla del viewport
+*/
+
+.container {
+  /* max-width: 400px;
+  max-height: 400px;
+  min-width: 200px;
+  min-height: 200px; */
+  /* width: 70%;
+  height: 300px; */
+  width: 80vw;
+  height: 30vh;
+  background-color: cadetblue;
+  margin: 30px auto;
+}

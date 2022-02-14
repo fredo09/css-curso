@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*
+    Entendiendo las pseudoclases para seleccionar algun tipo de elementos.
+
+    - only-of-type: selecciona elementos que son unicos en su tipo dentro de su contenedor o padre
+    - first-of-type: Seleccina elementos que estan primeros en su contenedor y que sean de su tipo.
+    - last-of-type: Seria lo mismo que el anterior soloq ue selecciona el ultimo.
+    - nth-of-type(n): Selecciona los elementos de tipo segun la posicion que tenga "n" en su contenedor. 
+    - nth-last-of-type(n): Selecciona los elementos de tipo solo que empieza por debajo hacia arriba.
+*/
+
+body {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.box {
+  display: block;
+  background: steelblue;
+  width: 55px;
+  height: 55px;
+  margin: 10px 0;
+  margin-left: 5px;
+  text-align: center;
+  line-height: 55px;
+  color: #fff;
+  font-weight: bold;
+}
+
+.container {
+  margin-left: -5px;
+  padding: 10px 0;
+  border: 3px solid lightcoral;
+}
+
+/* Por tipo */
+
+/* .box:only-of-type {
+  background: tomato;
+} */
+
+/* .box:first-of-type {
+  background: tomato;
+} */
+
+/* .box:last-of-type {
+  background: tomato;
+} */
+
+/*
+    "n" funciona como un acomulador que se va a seguir iterando hasta que no encuentre coincidencias.
+    al poner 2*n seria como una multiplicacion, al final esto servira para hacer patrones de seleccion 
+
+    2*0 = 0,
+    2*1 = 2
+    ...
+*/
+
+/* .box:nth-of-type(n) {
+  background: tomato;
+} */
+
+/* .box:nth-last-of-type(2) {
+  background: tomato;
+} */
+
+/*
+    PseudoClases tipo hijo.
+
+    - Se usan como condiciones si cumple se aplica regla CSS si no pues no se aplica.
+
+        -only-child: Selecciona solo los hijos que sean unicos dentro de su cuntenedor padre sin importar el tipo.
+        -first-child: Selecciona el primer elemento hijo de su contenedor padre.
+        -last-child: Selecciona el ultimo hijo de su contenedor padre. 
+        -nth-child: misma funcion que nth-of-type solo que aplica a hijos de contenedores.
+        -nth-last-child: misma funcion que nth-last-of-type solo que aplica a hijos de contenedores.
+ */
+/* .box:only-child {
+  background: tomato;
+} */
+
+/* p:first-child {
+  background: tomato;
+} */
+
+/* div:last-child {
+  background: crimson;
+} */
+
+/* .container :nth-child(1n) {
+  background: crimson;
+} */
+
+.container :nth-last-child(1n) {
+  background: crimson;
+}

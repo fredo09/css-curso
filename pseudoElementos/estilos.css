@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*
+    Pseudoelementos (Se agregan al final del selector).
+
+    Sintaxis: 
+        <selector>::<pseudoElemento>{
+            <Regla css>
+        }
+    
+    - Selecction:es la manera en que seleccionamos algun elemento.
+    - firts-line: afecta a la primera linea de un elemento ejemplo "primera linea de  un parrafo".
+    - first-letter: afecta a la primara letra de un elemento.
+    - placeholder: afecta al enunciado de un input.
+    
+    
+    PseudoElementos Before - After
+
+    Permiten insertar elementos en el navegador sin estar escritos en el html.
+
+    Estructura de como funciona Before y After.
+
+    <element>
+        ::before -> Creamos el contenido en css sin ninguna etiqueta html
+        contenido (texto, enlaces, imagenes, videos, etc)    
+        ::after -> Creamos el contenido en css sin ninguna etiqueta html
+    </element>
+*/
+
+body {
+  background: salmon;
+  font-family: Arial;
+}
+
+.card {
+  width: 300px;
+  margin: 40px auto;
+  background: #fff;
+  padding: 40px;
+  box-shadow: -20px -20px 0 0 #fb968b;
+  border-radius: 10px;
+}
+
+.card__title {
+  border-bottom: 3px solid salmon;
+  padding-bottom: 7px;
+  margin-bottom: 7px;
+}
+
+/* ::selection {
+  background: coral;
+  color: cornsilk;
+} */
+
+/* .card__title::first-letter {
+  font-size: 4rem;
+} */
+
+/* input[type="text"]::placeholder {
+  color: #000;
+} */
+
+/*
+    Usar contadores en una lista.
+*/
+
+ul {
+  counter-reset: contador;
+}
+
+li {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 8px;
+}
+
+li::before {
+  content: counter(contador);
+  counter-increment: contador;
+  background: salmon;
+  width: 30px;
+  height: 30px;
+  display: inline-block;
+  border-radius: 50%;
+  color: #fff;
+  line-height: 30px;
+  text-align: center;
+  margin-right: 4px;
+}

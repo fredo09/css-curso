@@ -1,0 +1,72 @@
+:root {
+  --white: #fff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.title {
+  font-family: monospace;
+  font-size: 2rem;
+  text-align: center;
+  margin: 30px auto;
+  color: aqua;
+}
+
+/*
+    Sintaxis de un amedia query en css.
+
+    @media<media-type> and (expresion) {
+        codigo css...
+    }
+
+    @media: palabra reservada para iniciar un amedia query.
+    media-type: El tipo de dispositivo a adptar.
+    and: conexion a la expresion a resolver.
+    expresion: Difinira cuando esta media query se ejecute.
+
+*/
+
+/*Es cuando mandamos a la impresora */
+/* @media print {
+  .title {
+    color: red;
+    font-size: 5rem;
+    text-align: right;
+  }
+} */
+
+/*screen -> pantallas, speech -> para sintetisadores de voz*/
+/* @media screen and (max-width: 600px) {
+  .title {
+    background: #000;
+    color: #fff;
+  }
+} */
+
+/*usando landscape*/
+/* @media screen and (orientation: landscape) {
+  .title {
+    background: rosybrown;
+    color: #fff;
+  }
+} */
+
+/*usando portrait*/
+
+/* @media screen and (orientation: portrait) and (max-width: 600px) {
+  .title {
+    text-align: left;
+  }
+} */
+
+/*Usando condicion or*/
+@media screen and (max-width: 400px), (min-width: 900px) {
+  .title {
+    background: #000;
+    color: #fff;
+  }
+}

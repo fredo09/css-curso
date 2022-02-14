@@ -1,0 +1,42 @@
+body {
+  margin: 0;
+}
+
+.box {
+  width: 200px;
+  height: 200px;
+}
+
+.box1 {
+  background: steelblue;
+  /*
+    USO DE MARIGN
+    Funcionalidad de margin:
+    - margin: top right bottom left;
+    margin: 40px;
+    - valor que se le asigna a todos los lados de la caja
+    margin 40px 30px;
+        - el primer valor es para las posiciones de arriba y abajo (top, bottom)
+        - el segundo valor es para la posiciones de right y left
+
+    margin: 30px 20px 40px;
+        - el primer valor se va al top
+        - el segundo valor se va al right y left
+        - el tercer valor al bottom
+  */
+}
+
+.box2 {
+  background: tomato;
+  padding: 10px;
+  margin: 10px;
+  box-sizing: border-box;
+}
+
+/*
+    Colapso de margenes:
+    cuando dos elementos adyasente toca sus margenes
+    si se encuentran entonces se fusionan 
+
+
+*/

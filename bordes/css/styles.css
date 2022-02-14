@@ -1,0 +1,46 @@
+/*
+    USO DE LA PROPIEDAD BORDER EN CSS
+*/
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*
+    sintaxis de la pripedad border:
+
+    border: <width> <style> <color>;
+
+    width: el tamaño del borde.
+    style: el estilo del borde.
+    color: el color del borde
+
+    forma para hacerlo mas especifico parte 1
+
+    border-width: 1px;
+    border-style: solid;
+    border-color: #000;
+
+    otra forma de ser mas especificos con el border
+    border-top: 1px solid #fff;
+    border-right:;
+    border-left:;
+    border-bottom:;
+
+    otra forma
+    border-top-width: ;
+    border-top-style: ;
+    border-top-color: ;
+*/
+
+.box {
+  background: burlywood;
+  width: 200px;
+  margin: 0 auto;
+  height: 200px;
+  margin-top: 40px;
+
+  border: 10px double #000;
+}

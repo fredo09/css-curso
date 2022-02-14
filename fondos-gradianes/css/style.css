@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/*
+body {
+  background-image: url(../img/textura.png);
+}*/
+
+/*
+
+  background-position: valor-x  valor-y;
+  si x es positivo entonces el valor se movera hacia abajo y su contraparte
+  se moveria hacia arriba
+  Si y es positivo entonces el valor se movera hacia izquierda y su 
+  contraparte se moveria hacia la derecha
+
+  palabras reservadas de background-position.
+  background-position:top bottom left right center; solo se pueden usar una propiedad de la misma posicion 
+
+  background-size.
+
+  Funciona igual que el anterior background-position.
+
+  propiedades que usa.
+
+  -contain: escala la imagen al maximo tamaño posible sin estirar la imagen.
+  -cover: ocupa el 100% del elemento.
+*/
+.container {
+  width: 70%;
+  height: 300px;
+  background: brown;
+  margin: 30px auto;
+  background-image: url(../img/spidy.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+}
