@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Arial";
+}
+
+/*
+    -- Grid Css
+
+    Por defecto al usar display:grid;
+    los items que estan en el contenedor tomaran el flujo de filas uno de bajo del otro.
+    por defecto cada item se posiciona en una cell de la rejilla del grid-container
+
+    Crear filas y columnas "Tracks"
+    
+        - grid-template-columns: este difinira las columnas dentro del contenedor grid.
+            - streech : (Valor por defecto) esto hara que el gridd-item se estire ocupando el espacio de su contenedor.
+            
+
+        - repeat: una funcion de css que nos ayuda a repetir cierto criterio n veces.
+            - primer parametro es un numero entero
+            - otro parametro es donde pondremos la medida que tendra basicamente la unidad de medida.
+
+      * Para hacer que los grid-items sean flexibles se agrego una nuema unidad de medida 1fr*
+
+      - fr (Fraccion) : divide el espacio disponible en fracciones.
+      - auto : valor automatico,  se ajusta a su contenido. 
+    
+    Crear filas explicitas.
+      - grid-template-row: Crea filas explicitas en el grid-container.
+        sus valores son los siguientes al final tiene la misma teoria de grid-template-columns.
+        - auto (valor por defecto).
+
+    Posicionamiento de grid-items:
+
+      -Posicionamiento a travez de las lineas:
+
+        aqui trabajaremos con los gris-items, aqui definen el inicio y final del elemento a travez de las lineas.
+          Aqui manejamos las columnas:
+            - grid-column-start: Va a definir el inicio del elemento basado en lineas. Usa como referencia la linea de columna.
+            
+            - grid-column-end: Misma definicion que "grid-column-start" solo que aqui decimos en donde terminara el grid-item.
+
+            "Estas propiedades tienen un sort-hand"
+              - grid-colum: Aqui podemos manejar el posicionamiento de los grid-items  medianete las lineas de la columna.
+                tratando aqui de quitar el "grid-column-start" y "grid-column-end".
+                  Sintaxis -> grid-column: grid-column-start/grid-column-end".
+
+          Aqui manejamos las filas:
+            -grid-row-start: Misma difinicion en "grid-column-start" solo que aqui manejamos lineas de las filas.
+            -grid-row-end: Misma definicion en "grid-column-end" solo que aqui manejamos lineas de las filas.
+
+            "Estas propiedades tienen un sort-hand"
+              - grid-row: Aqui podemos manejar el posicionamiento de los grid-items medianete las lineas de la filas.
+                tratando aqui de quitar el "grid-row-start" y "grid-row-end".
+                  Sintaxis -> grid-row: grid-row-start/grid-row-end".
+
+*/
+
+.grid {
+  max-width: 700px;
+  width: 90%;
+  height: 500px;
+  margin: 20px auto;
+  outline: 3px solid #000;
+
+  display: grid; /*Activamos el modo css grid*/
+
+  /* grid-template-columns: repeat(6, 1fr); */
+  grid-template-columns: repeat(4, 1fr);
+
+  grid-template-rows: repeat(
+    4,
+    1fr
+  ); /*Aqui podemos crear filas explicitas que nosotros nombremos*/
+}
+
+.grid__item {
+  color: #fff;
+  font-size: 3rem;
+  text-align: center;
+  padding-top: 1rem;
+}
+
+.grid :nth-child(1) {
+  background: crimson;
+
+  /*Aqui tranajaremos con el posicionamiento por lineas del elemento*/
+  /* grid-column-start: 3;
+  grid-column-end: 5; */
+
+  grid-column: 3/5; /*Abrebriatura*/
+
+  /*Posicionamiento por lineas en filas*/
+
+  /* grid-row-start: 2;
+  grid-row-end: 5; */
+
+  grid-row: 2/5; /*Abrebriatura*/
+}
+
+.grid :nth-child(2) {
+  background: darkcyan;
+}
+
+.grid :nth-child(3) {
+  background: blueviolet;
+}
+
+.grid :nth-child(4) {
+  background: palegreen;
+}
+
+.grid :nth-child(5) {
+  background: greenyellow;
+}
+
+.grid :nth-child(6) {
+  background: steelblue;
+}
