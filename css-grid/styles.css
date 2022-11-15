@@ -15,9 +15,26 @@ body {
     los items que estan en el contenedor tomaran el flujo de filas uno de bajo del otro.
     por defecto cada item se posiciona en una cell de la rejilla del grid-container
 
+    * Trabaja con un sistema "Bidimensional", usara filas y columnas las filas (Row) son horizontales
+    * las columnas con verticales, Ejemplo una Hola de calculo en excel.
+
+    * Asi mismo como se usa un flex-container en flexbox, se usara un container en grid llamado grid-container.
+
+    * Los hijos directos de un grid-container seran llamados grid-items.
+
     Crear filas y columnas "Tracks"
-    
-        - grid-template-columns: este difinira las columnas dentro del contenedor grid.
+
+        - Para generar una sistema de grillas se usa "display: grid", en el contenedor
+          - Este sistema hace que los "grid-items" se pongan una de bajo del otro (por defecto)
+            usando  la siguiente propiedad orientamos su orden
+
+            - grid-auto-flow:
+              - row (No hace nada ya que grid lo pone los grid-items por defecto en filas "row").
+              - column (Pone los grid-items en columnas "columns").
+            
+            - Valor por defecto de los grid-items es "streech"->Estirado a menos de que no tenga un hight definido. 
+
+        - grid-template-columns: este difinira las columnas dentro del contenedor grid. Aqui podremos crear columnas cuantas querramos.
             - streech : (Valor por defecto) esto hara que el gridd-item se estire ocupando el espacio de su contenedor.
             
 
@@ -25,25 +42,42 @@ body {
             - primer parametro es un numero entero
             - otro parametro es donde pondremos la medida que tendra basicamente la unidad de medida.
 
-      * Para hacer que los grid-items sean flexibles se agrego una nuema unidad de medida 1fr*
+            Ejemplo:
+                        ```` repeat(<Numero de veces que se repetiria>, <Medida de cada repeticiòn>) ````
+
+            Entonces decimos que 
+              `````
+                grid-template-column: repeat(5, 30%);
+              `````
+            Me creara 5 columnas o filas de 30% de espacio.
+
+      * Para hacer que los grid-items sean flexibles se agrego una nueva unidad de medida 1fr*
 
       - fr (Fraccion) : divide el espacio disponible en fracciones.
-      - auto : valor automatico,  se ajusta a su contenido. 
+      - auto : valor automatico,  se ajusta a su contenido, toma el espacio disponible. 
     
     Crear filas explicitas.
       - grid-template-row: Crea filas explicitas en el grid-container.
         sus valores son los siguientes al final tiene la misma teoria de grid-template-columns.
-        - auto (valor por defecto).
+        - auto (valor por defecto) genera un valor auto depentendiendo de su font-size, toma el espacio disponible.
 
     Posicionamiento de grid-items:
 
       -Posicionamiento a travez de las lineas:
 
-        aqui trabajaremos con los gris-items, aqui definen el inicio y final del elemento a travez de las lineas.
-          Aqui manejamos las columnas:
+        Aqui trabajaremos con los gris-items, aqui se definen el inicio y final del elemento a travez de las lineas.
+          manejamos las columnas:
             - grid-column-start: Va a definir el inicio del elemento basado en lineas. Usa como referencia la linea de columna.
             
             - grid-column-end: Misma definicion que "grid-column-start" solo que aqui decimos en donde terminara el grid-item.
+
+            Ejemplo:
+              ````
+              grid-column-start: 3;
+              grid-column-end: 5;
+              `````
+
+            Definimos que el grid-item empezara con la linea de columna numero 3 y terminara en la linea de columna numero 5.
 
             "Estas propiedades tienen un sort-hand"
               - grid-colum: Aqui podemos manejar el posicionamiento de los grid-items  medianete las lineas de la columna.
@@ -54,6 +88,13 @@ body {
             -grid-row-start: Misma difinicion en "grid-column-start" solo que aqui manejamos lineas de las filas.
             -grid-row-end: Misma definicion en "grid-column-end" solo que aqui manejamos lineas de las filas.
 
+            Ejemplo: 
+                ```` 
+                  grid-row-start: 3;
+                  grid-row-end: 5;
+                `````
+            Definimos que el grid-item empezara con la linea de fila numero 3 y terminara en la linea de fila numero 5.
+            
             "Estas propiedades tienen un sort-hand"
               - grid-row: Aqui podemos manejar el posicionamiento de los grid-items medianete las lineas de la filas.
                 tratando aqui de quitar el "grid-row-start" y "grid-row-end".

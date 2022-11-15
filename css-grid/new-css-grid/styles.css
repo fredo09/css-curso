@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial';
+}
+
+.grid {
+    max-width: 700px;
+    width: 90%;
+    height: 500px;
+    margin: 20px auto;
+    outline: 3px solid #000;
+
+    /*Activamos el modo grid*/
+    display: grid;
+
+    /*Definimos el modo en que se acomandan los grid-items*/
+    /* grid-auto-flow: column; */
+
+    /*Definiremos columnas en el grid-container "Tracks" usando funcion css "repeat(n, medida)"*/
+    /* grid-template-columns: repeat(10, 10%); */
+
+    /*Definiremos columnas en el grid-container "Tracks" usando funcion css "repeat(n, medida1 medida2)" -> hara que se haga un patron intercalado de medidas*/
+    /* grid-template-columns: repeat(3, 10px 20%); */
+
+    /*Usaremos fr para generar fracciones*/
+    grid-template-columns: repeat(4, 1fr);
+
+    /*Generaciòn de filas en grid-container*/
+    grid-template-rows: repeat(4,1fr);
+}
+
+.grid__item {
+    color: #fff;
+    font-size: 3rem;
+    text-align: center;
+    padding-top: 1rem;
+}
+
+/*Grid-items*/
+
+.grid :nth-child(1) {
+    background: crimson;
+
+    /*posicionamiento con las lineas colunmas*/
+    /* grid-column-start: 2;
+    grid-column-end: 5; */
+
+    /*Forma sencilla de posicionar grid-item por lineas de columnas (columns) sustituyendo "grid-column-start y grid-column-end"*/
+    grid-column: 2/5;
+
+    /*Posicionamiento de lineas filas*/
+    /* grid-row-start: 2;
+    grid-row-end: 5; */
+
+    /*Forma sencilla de posicionar grid-item por lineas de filas (row) sustituyendo "grid-column-start y grid-column-end"*/
+        grid-row: 2/5;
+}
+
+.grid :nth-child(2) {
+    background: darkcyan;
+}
+
+.grid :nth-child(3) {
+    background: blueviolet;
+}
+
+.grid :nth-child(4) {
+    background: palegreen;
+}
+
+.grid :nth-child(5) {
+    background: greenyellow;
+}
+
+.grid :nth-child(6) {
+    /*Posicionamiento por lineas de rows*/
+    /* grid-row-start: 2;
+    grid-row-end: 5; */
+
+    /*Forma sencilla de posicionar grid-item por lineas de filas (row) sustituyendo "grid-column-start y grid-column-end"*/
+        grid-row: 2/5;
+
+    background: steelblue;
+}
